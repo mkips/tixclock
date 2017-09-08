@@ -7,10 +7,8 @@ import sys
 
 def get_time():
     now = datetime.datetime.now()
-    hours_1 = now.hour / 10
-    hours_2 = now.hour % 10
-    minutes_1 = now.minute / 10
-    minutes_2 = now.minute % 10
+    hours_1, hours_2 = divmod(now.hour, 10)
+    minutes_1, minutes_2 = divmod(now.minute, 10)
     return hours_1, hours_2, minutes_1, minutes_2
 
 def shuffle_string(points):
